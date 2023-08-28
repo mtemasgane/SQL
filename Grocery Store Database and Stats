@@ -1,0 +1,34 @@
+--Create a grocery store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES (1, "dragon fruit", "fresh", 5.99, 50);
+INSERT INTO store VALUES (2, "banana", "fresh", 0.25, 95);
+INSERT INTO store VALUES (3, "pineapples", "fresh", 2.99, 55);
+INSERT INTO store VALUES (4, "onions", "fresh", 0.99, 50);
+INSERT INTO store VALUES (5, "chips", "snacks", 3.99, 65);
+INSERT INTO store VALUES (6, "salsa", "fresh", 3.25, 43);
+INSERT INTO store VALUES (7, "pizza", "frozen", 2.99, 35);
+INSERT INTO store VALUES (8, "chicken nuggets", "frozen", 2.99, 50);
+INSERT INTO store VALUES (9, "ice cream", "frozen", 4.99, 75);
+INSERT INTO store VALUES (10, "paper towels", "home items", 8.99, 25);
+INSERT INTO store VALUES (11, "paper plates", "home items", 6.99, 33);
+INSERT INTO store VALUES (12, "plastic cups", "home items", 4.99, 80);
+INSERT INTO store VALUES (13, "vitamin D", "health", 8.99,29);
+INSERT INTO store VALUES (14, "biotin", "health", 4.99, 26);
+INSERT INTO store VALUES (15, "vitamin C", "health", 7.99, 47);
+
+--display the database ordered by price. 
+SELECT * FROM store
+ORDER BY price desc; 
+
+--what is the avg price of items in the frozen section? 
+SELECT AVG(price) "avg frozen item price"
+FROM store
+where section='frozen'; 
+
+--what are the most 5 expensive items? 
+SELECT item, price
+FROM store
+order by price desc
+limit 5; 
