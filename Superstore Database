@@ -37,7 +37,7 @@ SELECT SUM(price), item_name
 FROM superstore
 GROUP BY item_name
 
---Show a statistic about the price for items in the category "Kitchen Supplies"
+--Display the price for items in the category "Kitchen Supplies"
 SELECT AVG(price), category
 FROM superstore
 WHERE category = 'Kitchen Supplies'
